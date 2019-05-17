@@ -6,6 +6,6 @@
   },
   "ConnectionStrings": {
     //"AzureWebJobsDashboard": "",
-    "AzureWebJobsStorage": "{{CONNECTION STRING}}"
+    "AzureWebJobsStorage": ""
   }
 }
