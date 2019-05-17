@@ -1,0 +1,11 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    //"AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=hemantdltest;AccountKey=e/A0J60ybVD3K/4RB/XiQsMuV2gqjaWN3gGz05Zl4ZwXKe93X5wwwNF2N2aOgQhCdnceG08X3ldoKXSKduwvLw==;EndpointSuffix=core.windows.net",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=hemantdltest;AccountKey=e/A0J60ybVD3K/4RB/XiQsMuV2gqjaWN3gGz05Zl4ZwXKe93X5wwwNF2N2aOgQhCdnceG08X3ldoKXSKduwvLw==;EndpointSuffix=core.windows.net"
+  }
+}

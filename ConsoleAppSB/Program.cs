@@ -16,7 +16,7 @@ namespace ConsoleAppSB
 			//Below piece of code is not required if name of json file is 'appsettings.json'
 			builder.ConfigureAppConfiguration(c =>
 		   {
-			   c.AddJsonFile("Myappsettings.json", optional: false, reloadOnChange: true);
+			   c.AddJsonFile("myAppsettings.json", optional: false, reloadOnChange: true);
 
 		   });
 			builder.ConfigureWebJobs(b =>
