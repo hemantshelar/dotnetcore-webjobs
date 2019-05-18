@@ -16,8 +16,13 @@ namespace ConsoleAppSB.Processors
 		}
 		public void ProcessQueueMessage([QueueTrigger("myqueue")] string message, ILogger logger)
 		{
-			logger.LogInformation(message);
+			logger.LogCritical(message);
 			this.dataStore.ProcessData();
+		}
+
+		public void SBTopicListener([ServiceBusTrigger("testtopic","all")] object obj)
+		{
+			Console.WriteLine("data received.");
 		}
 	}
 }
