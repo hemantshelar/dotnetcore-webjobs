@@ -20,7 +20,7 @@ namespace ConsoleAppSB.Processors
 			this.dataStore.ProcessData();
 		}
 
-		public void SBTopicListener([ServiceBusTrigger("testtopic","all")] object obj)
+		public void SBTopicListener([ServiceBusTrigger("testqueue", Connection = "AzureWebJobsServiceBus")] string myQueueItem , Int32 deliveryCount, string messageId, DateTime enqueuedTimeUtc,  ILogger log)
 		{
 			Console.WriteLine("data received.");
 		}

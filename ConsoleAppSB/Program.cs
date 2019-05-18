@@ -9,6 +9,7 @@ using ConsoleAppSB.Interfaces;
 using ConsoleAppSB.Services;
 using Microsoft.Azure.WebJobs.Host;
 
+//https://github.com/Azure/azure-webjobs-sdk/blob/554b7ba922be3a4e1f380034dc0c62d4efb2aa79/sample/SampleHost/Program.cs#L20
 namespace ConsoleAppSB
 {
 	class Program
@@ -20,19 +21,23 @@ namespace ConsoleAppSB
 			//Below piece of code is not required if name of json file is 'appsettings.json'
 			builder.ConfigureAppConfiguration(c =>
 		   {
-			   c.AddJsonFile("myAppsettings.json", optional: true, reloadOnChange: true);
+			   c.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 			   c.AddEnvironmentVariables();
 		   })
 			.ConfigureWebJobs(b =>
 			{
-				b.AddAzureStorageCoreServices();
-				b.AddAzureStorage();
-				b.Services.AddSingleton<IDataStore, DataStore>();
+				b.AddAzureStorageCoreServices()
+				.AddAzureStorage()
+				.AddServiceBus();
 			})
 			.ConfigureLogging((context, b) =>
 			{
 				b.AddConsole();
-			});
+			})
+			.ConfigureServices(s =>
+		   {
+			   s.AddSingleton<IDataStore, DataStore>();
+		   });
 
 			using (var host = builder.Build())
 			{

@@ -14,7 +14,7 @@ namespace ConsoleApp1
 			var sbNameSpace = "hemanttestsb";
 			var sbPath = "testtopic";
 			var sbPolicy = "Send";
-			var sbKey = "";
+			var sbKey = "mVvckbUWiTm7xOIpCs7mFGRtYfMUlcNVHrTfvQaWU8Q=";
 			var expiry = new TimeSpan(100, 1, 1, 1);
 			try
 			{
