@@ -9,7 +9,6 @@ using ConsoleAppSB.Interfaces;
 using ConsoleAppSB.Services;
 using Microsoft.Azure.WebJobs.Host;
 
-//https://github.com/Azure/azure-webjobs-sdk/blob/554b7ba922be3a4e1f380034dc0c62d4efb2aa79/sample/SampleHost/Program.cs#L20
 namespace ConsoleAppSB
 {
 	class Program
@@ -28,6 +27,7 @@ namespace ConsoleAppSB
 			{
 				b.AddAzureStorageCoreServices()
 				.AddAzureStorage()
+				//https://github.com/Azure/azure-webjobs-sdk/blob/554b7ba922be3a4e1f380034dc0c62d4efb2aa79/sample/SampleHost/Program.cs#L20
 				.AddServiceBus();
 			})
 			.ConfigureLogging((context, b) =>
@@ -45,19 +45,4 @@ namespace ConsoleAppSB
 			}
 		}
 	}
-
-
-	//public class Functions
-	//{
-	//	private readonly IDataStore dataStore;
-	//	public Functions(IDataStore dataStore)
-	//	{
-	//		this.dataStore = dataStore;
-	//	}
-	//	public void ProcessQueueMessage([QueueTrigger("myqueue")] string message, ILogger logger)
-	//	{
-	//		logger.LogInformation(message);
-	//		this.dataStore.ProcessData();
-	//	}
-	//}
 }
